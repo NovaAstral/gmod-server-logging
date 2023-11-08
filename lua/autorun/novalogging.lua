@@ -88,6 +88,8 @@ function Nova_Logging_CreateHooks()
     --Damage / Death Logs--
     -----------------------
     hook.Add("PostEntityTakeDamage","Nova Server Logging DamageHook", function(ent,dmgi,tookdamage)
+        if(tookdamage == false) then return end
+        
         if(ent:IsPlayer()) then
             damageentname = ent:GetName()
         else
@@ -97,7 +99,7 @@ function Nova_Logging_CreateHooks()
         local dmg = dmgi:GetDamage()
         local attacker = dmgi:GetAttacker()
         local inflictor = tostring(dmgi:GetInflictor()) -- This will often return a weapon or the projectile that hit the ent
-        local pos = tostring(dmgi:GetReportedPosition())
+        local pos = tostring(ent:GetPos())
 
         if(attacker:IsPlayer()) then
             attackername = attacker:GetName()
