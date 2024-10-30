@@ -87,6 +87,7 @@ function Nova_Logging_CreateHooks()
     -----------------------
     --Damage / Death Logs--
     -----------------------
+    /*
     hook.Add("PostEntityTakeDamage","Nova Server Logging DamageHook", function(ent,dmgi,tookdamage)
         if(tookdamage == false) then return end
         
@@ -128,6 +129,7 @@ function Nova_Logging_CreateHooks()
             end)
         end
     end)
+    */
 
     hook.Add("PlayerDeath","Nova Server Logging Deaths",function(ent,inflictor,attacker)
         local date = os.date("%d %m %Y",os.time())
