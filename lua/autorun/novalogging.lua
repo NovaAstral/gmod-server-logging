@@ -281,7 +281,7 @@ function Nova_Logging_CreateHooks()
             EntPhysOwner = "world"
         end
 
-        local EntPhysString = tostring(ent).." owned by "..EntPhysOwner.." was removed at "..tostring(ent:GetPos().." because of crazy physics.")
+        local EntPhysString = tostring(ent).." owned by "..EntPhysOwner.." was removed at "..tostring(ent:GetPos()).." because of crazy physics.")
 
         if(file.Exists("n_server_logs/entitylogs/log "..date..".txt","DATA")) then
             file.Append("n_server_logs/entitylogs/log "..date..".txt","\n"..time.." "..EntPhysString)
